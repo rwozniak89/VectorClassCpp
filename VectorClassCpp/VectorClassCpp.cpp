@@ -62,7 +62,6 @@ class SpecialTable {       // The class
 
         int countValueExists(int x)
         {
-            
             if (table.empty())
             {
                 cout << "tablica jest pusta!";
@@ -97,20 +96,17 @@ class SpecialTable {       // The class
 
         string toString()
         {
+            if (table.empty()) return "[]";
 
-            if (table.empty())
-            {
-                return "[]";
-            }
             string result = "[";
             int index = 1;
             for (int var : table)
             {
-                result += to_string(var);
-                if (index < table.size()) result += ",";
+                result.append(to_string(var));
+                if (index < table.size()) result.append(",");
                 index++;
             }
-            result += "]";
+            result.append("]");
             return result;
         }
 
